@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="b2d.css">
+    <title>Binary 2 Decimal</title>
+  </head>
+  <body>
+
+    <div id="converter">
+
+      <h1>Binary 2 Decimal Converter</h1>
+
+      <form id="convert">
+        <label for="binary">Binary:</label>
+        <input type="text" id="binary" name="binary" placeholder="010111">
+        <h1>=</h1>
+        <label for="binary">Decimal:</label>
+        <input type="text" id="decimal" name="decimal" placeholder="23">
+
+        <p id="message" class="hidden">Please enter one - and only one - value, champ.</p>
+        <p id="nonum" class="hidden">Make it a number dude.</p>
+        <p id="wrongnum" class="hidden">Zeroes and ones if it's binary, pal.</p>
+
+        <button>Make it so</button>
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="b2d.js"></script>
+
+  </body>
+</html>

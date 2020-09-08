@@ -1,0 +1,59 @@
+body {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+#converter {
+  max-width: 500px;
+  border: 10px solid pink;
+  border-radius: 10px;
+  margin: 4rem auto 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 2rem 0;
+  font-size: 1.6rem;
+}
+form h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  border: none;
+  border: 2px solid black;
+  display: block;
+  width: 70%;
+  height: 2rem;
+  text-align: center;
+  margin: 0.5rem auto 1rem auto;
+}
+
+input:focus {
+  background-color: pink;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  padding: 0.6rem;
+  background-color: pink;
+  border-bottom: 2px solid black;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
