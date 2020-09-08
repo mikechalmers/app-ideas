@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Border Radius</title>
+  </head>
+  <body>
+
+    <h1>Border Radius Preview and Generator</h1>
+    <!-- <p>Test text appears here okay?</p> -->
+
+    <form>
+      <div class="flex-row">
+        <div class="corner">
+          <label for="top-left">Top Left:</label>
+          <input type="number" step="1" min="0" max="100" name="top-left" id="top-left" value="0">
+        </div>
+        <div class="corner">
+          <label for="top-right">Top Right:</label>
+          <input type="number" step="1" min="0" max="100" name="top-right" id="top-right" value="25">
+        </div>
+        <div class="corner">
+          <label for="bottom-left">Bottom Left:</label>
+          <input type="number" step="1" min="0" max="100" name="bottom-left" id="bottom-left" value="50">
+        </div>
+        <div class="corner">
+          <label for="bottom-right">Bottom Right:</label>
+          <input type="number" step="1" min="0" max="100" name="bottom-right" id="bottom-right" value="75">
+        </div>
+      </div>
+      <div class="flex-row">
+        <button type="button" id="preview">preview</button>
+        <button type="button" id="code">generate code</button>
+      </div>
+    </form>
+
+    <div id="myModal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <pre><code>div {
+  border-top-left-radius: <span id="topl">0</span>%;
+  border-top-right-radius: <span id="topr">25</span>%;
+  border-bottom-left-radius: <span id="botl">50</span>%;
+  border-bottom-right-radius: <span id="botr">75</span>%;
+}</code></pre>
+
+      </div>
+
+    </div>
+
+    <div id="bordered">
+
+    </div>
+
+    <script type="text/javascript" src="border-radius.js"></script>
+
+  </body>
+</html>
