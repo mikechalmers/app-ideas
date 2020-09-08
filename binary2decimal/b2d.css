@@ -38,6 +38,7 @@ input {
 input:focus {
   background-color: pink;
   border: 2px solid black;
+  outline: none;
   color: black;
   font-weight: bold;
 }
