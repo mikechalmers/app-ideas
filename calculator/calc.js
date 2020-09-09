@@ -50,6 +50,8 @@ function checkSymbols() {
     upper.value = "";
   } else if(symbol == "equals") {
     equals();
+  } else if(symbol == "percent") {
+    percent();
   } else {
     mathSymbols();
   }
@@ -72,32 +74,59 @@ function equals() {
   } else if(upper.value.includes(" divide")) {
     divide();
   }
-
 }
+
+// one function
+
+// function equals() {
+//
+//   var firstNum = parseInt(firstVal, 10);
+//
+//   if(upper.value.includes(" times")) {
+//     var timesVal = upper.value.replace(" times",'');
+//     display.value = firstNum * parseInt(display.value, 10);
+//   } else if(upper.value.includes(" minus")) {
+//     var minustVal = upper.value.replace(" minus",'');
+//     display.value = firstNum - parseInt(display.value, 10);
+//   } else if(upper.value.includes(" plus")) {
+//     var plusVal = upper.value.replace(" plus",'');
+//     display.value = firstNum + parseInt(display.value, 10);
+//   } else if(upper.value.includes(" divide")) {
+//     var divideVal = upper.value.replace(" divide",'');
+//     display.value = firstNum / parseInt(display.value, 10);
+//   }
+//   upper.value = "";
+// }
+
 
 function times() {
   var firstVal = upper.value.replace(' times','');
-  var firstNum = parseInt(firstVal, 10);
-  display.value = firstNum * parseInt(display.value, 10);
+  var firstNum = parseFloat(firstVal, 10);
+  display.value = firstNum * parseFloat(display.value, 10);
   upper.value = "";
 }
 function minus() {
   var firstVal = upper.value.replace(' minus','');
-  var firstNum = parseInt(firstVal, 10);
-  display.value = firstNum - parseInt(display.value, 10);
+  var firstNum = parseFloat(firstVal, 10);
+  display.value = firstNum - parseFloat(display.value, 10);
   upper.value = "";
 }
 function plus() {
   var firstVal = upper.value.replace(' plus','');
-  var firstNum = parseInt(firstVal, 10);
-  display.value = firstNum + parseInt(display.value, 10);
+  var firstNum = parseFloat(firstVal, 10);
+  display.value = firstNum + parseFloat(display.value, 10);
   upper.value = "";
 }
 function divide() {
   var firstVal = upper.value.replace(' divide','');
-  var firstNum = parseInt(firstVal, 10);
-  display.value = firstNum / parseInt(display.value, 10);
+  var firstNum = parseFloat(firstVal, 10);
+  display.value = firstNum / parseFloat(display.value, 10);
   upper.value = "";
+}
+function percent() {
+  var firstVal = display.value;
+  var firstNum = parseFloat(firstVal, 10);
+  display.value = firstNum / 100;
 }
 
 // if button is pressed
