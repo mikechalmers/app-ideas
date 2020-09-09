@@ -1,3 +1,4 @@
+let buttons = document.getElementsByClassName("button");
 var display = document.querySelector("#display");
 
 var c = document.querySelector("#C");
@@ -21,9 +22,14 @@ var eight = document.querySelector("#eight");
 var nine = document.querySelector("#nine");
 var zero = document.querySelector("#zero");
 
-c.addEventListener("click", function(e){
-  display.value = "hello";
+[...buttons].forEach((button) => {
+  button.addEventListener("click", (event) => {
+    console.log(event.target.id);
+  });
 });
+
+
+
 
 // if button is pressed
 // take its value
