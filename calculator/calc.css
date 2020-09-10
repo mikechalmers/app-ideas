@@ -76,10 +76,12 @@ input:disabled {
 }
 .button:hover {
   cursor: default;
+  background-color: #181818;
 }
 .zero {
   width: 200px;
 }
 .function {
-  opacity: 0.7;
+  background-color: #050505;
+  color: #c44;
 }
