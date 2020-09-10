@@ -3,6 +3,7 @@
 let buttons = document.getElementsByClassName("button");
 var display = document.querySelector("#display");
 var upper = document.querySelector("#upper-display");
+var funcDisplay = document.querySelector("#func-display");
 
 
 [...buttons].forEach((button) => {
@@ -13,14 +14,6 @@ var upper = document.querySelector("#upper-display");
   });
 });
 
-
-function numberDisplay() {
-  if(display.value == 0) {
-    display.value = event.target.id;
-  } else {
-    display.value = display.value + event.target.id;
-  }
-}
 
 function checkIfFunction() {
   var pressed = parseInt(event.target.id, 10);
@@ -40,95 +33,108 @@ function lessThanTen() {
   }
 }
 
+function numberDisplay() {
+  if(display.value == 0) {
+    display.value = event.target.id;
+  } else {
+    display.value = display.value + event.target.id;
+  }
+}
+
 function checkSymbols() {
   var symbol = event.target.id;
 
   if(symbol == "C") {
     display.value = 0;
+  } else if(symbol == "point") {
+    dot();
   } else if(symbol == "CE") {
     display.value = 0;
     upper.value = "";
+    funcDisplay.value = "";
   } else if(symbol == "equals") {
     equals();
   } else if(symbol == "percent") {
     percent();
   } else {
-    mathSymbols();
+    checkFuncDisplay();
   }
 }
 
 function mathSymbols() {
   var symbol = event.target.id;
-  upper.value = display.value + " " + symbol;
+  upper.value = display.value;
+  funcDisplay.value = symbol;
   display.value = 0;
 }
 
-function equals() {
+function dot() {
+  if(display.value.includes(".")) {
 
-  if(upper.value.includes(" times")) {
+  } else {
+    display.value = display.value + ".";
+  }
+}
+
+function checkFuncDisplay() {
+  if(funcDisplay.value == "") {
+    mathSymbols();
+  } else {
+    equals();
+    funcDisplay.value = event.target.id;
+    upper.value = display.value;
+    display.value = "0";
+  }
+}
+
+// function equals() {
+//   if(funcDisplay.value.includes("times")) {
+//     times();
+//   } else if(funcDisplay.value.includes("minus")) {
+//     minus();
+//   } else if(funcDisplay.value.includes("plus")) {
+//     plus();
+//   } else if(funcDisplay.value.includes("divide")) {
+//     divide();
+//   }
+// }
+function equals() {
+  if(funcDisplay.value.includes("times")) {
     times();
-  } else if(upper.value.includes(" minus")) {
+  } else if(funcDisplay.value.includes("minus")) {
     minus();
-  } else if(upper.value.includes(" plus")) {
+  } else if(funcDisplay.value.includes("plus")) {
     plus();
-  } else if(upper.value.includes(" divide")) {
+  } else if(funcDisplay.value.includes("divide")) {
     divide();
   }
 }
 
-// one function
-
-// function equals() {
-//
-//   var firstNum = parseInt(firstVal, 10);
-//
-//   if(upper.value.includes(" times")) {
-//     var timesVal = upper.value.replace(" times",'');
-//     display.value = firstNum * parseInt(display.value, 10);
-//   } else if(upper.value.includes(" minus")) {
-//     var minustVal = upper.value.replace(" minus",'');
-//     display.value = firstNum - parseInt(display.value, 10);
-//   } else if(upper.value.includes(" plus")) {
-//     var plusVal = upper.value.replace(" plus",'');
-//     display.value = firstNum + parseInt(display.value, 10);
-//   } else if(upper.value.includes(" divide")) {
-//     var divideVal = upper.value.replace(" divide",'');
-//     display.value = firstNum / parseInt(display.value, 10);
-//   }
-//   upper.value = "";
-// }
-
-
 function times() {
-  var firstVal = upper.value.replace(' times','');
-  var firstNum = parseFloat(firstVal, 10);
+  var firstNum = parseFloat(upper.value, 10);
   display.value = firstNum * parseFloat(display.value, 10);
   upper.value = "";
+  funcDisplay.value = "";
 }
 function minus() {
-  var firstVal = upper.value.replace(' minus','');
-  var firstNum = parseFloat(firstVal, 10);
+  var firstNum = parseFloat(upper.value, 10);
   display.value = firstNum - parseFloat(display.value, 10);
   upper.value = "";
+  funcDisplay.value = "";
 }
 function plus() {
-  var firstVal = upper.value.replace(' plus','');
-  var firstNum = parseFloat(firstVal, 10);
+  var firstNum = parseFloat(upper.value, 10);
   display.value = firstNum + parseFloat(display.value, 10);
   upper.value = "";
+  funcDisplay.value = "";
 }
 function divide() {
-  var firstVal = upper.value.replace(' divide','');
-  var firstNum = parseFloat(firstVal, 10);
+  var firstNum = parseFloat(upper.value, 10);
   display.value = firstNum / parseFloat(display.value, 10);
   upper.value = "";
+  funcDisplay.value = "";
 }
 function percent() {
-  var firstVal = display.value;
-  var firstNum = parseFloat(firstVal, 10);
+  var firstNum = parseFloat(display.value, 10);
   display.value = firstNum / 100;
 }
-
-// if button is pressed
-// take its value
-// do something with it
