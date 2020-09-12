@@ -34,7 +34,7 @@ function lessThanTen() {
 }
 
 function numberDisplay() {
-  if(display.value == 0) {
+  if(display.value === "0") {
     display.value = event.target.id;
   } else {
     display.value = display.value + event.target.id;
