@@ -1,0 +1,47 @@
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.bulb {
+  background-color: red;
+  width: 2.5rem;
+  height: 6rem;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+  border-bottom-left-radius: 90%;
+  border-bottom-right-radius: 90%;
+  margin: 2rem 4rem;
+}
+.bulb:before {
+  content: " ";
+  position: relative;
+  top: -2rem;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: darkgreen;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+.bulb:after {
+  content: " ";
+  position: relative;
+  display: block;
+  top: -5.5rem;
+  left: 1.5rem;
+  width: 10rem;
+  height: 2.5rem;
+  border-bottom: 3px solid darkgreen;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.bulb:last-child:after {
+  display: none;
+}
