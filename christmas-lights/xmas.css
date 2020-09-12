@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 .container {
   display: flex;
@@ -33,6 +34,7 @@ h1 {
   border-bottom-left-radius: 90%;
   border-bottom-right-radius: 90%;
   margin: 2.3rem 4rem;
+  transition-duration: 200ms;
 }
 .bulb:before {
   content: " ";
@@ -86,4 +88,27 @@ h1 {
         -10px 0 30px blue,
         0 0 50px 20px blue,
         10px 0 30px 10px #99f;
+}
+
+.on {
+  animation-duration: 3s;
+  animation-name: sitchedon;
+}
+
+@keyframes sitchedon {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
