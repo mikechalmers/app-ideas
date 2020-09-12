@@ -1,30 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@700&family=Raleway:wght@300&display=swap');
 
-
-
-
+body {
+  font-family: 'Raleway', sans-serif;
+}
 .container {
   display: flex;
   justify-content: center;
 }
+.meta {
+    margin-top: 5rem;
+}
+.controls {
+  margin: 4rem auto 0 auto;
+  border: 8px solid #b00;
+  border-radius: 10px;
+  padding: 3rem;
+  max-width: 600px;
+}
+h1 {
+  font-family: 'Grandstander', cursive;
+  text-align: center;
+  font-size: 5rem;
+  color: darkgreen;
+}
 
 .bulb {
-  background-color: red;
+  background-color: rgba(200, 200, 200, 0.3);
   width: 2.5rem;
   height: 6rem;
-  border-top-left-radius: 25%;
-  border-top-right-radius: 25%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
   border-bottom-left-radius: 90%;
   border-bottom-right-radius: 90%;
-  margin: 2rem 4rem;
+  margin: 2.3rem 4rem;
 }
 .bulb:before {
   content: " ";
   position: relative;
-  top: -2rem;
+  top: -2.3rem;
   display: block;
   width: 2.5rem;
   height: 2.5rem;
-  background-color: darkgreen;
+  background: darkgreen;
+  background: linear-gradient(90deg, #006400 50%, #00A300 100%);
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 5%;
@@ -34,14 +52,38 @@
   content: " ";
   position: relative;
   display: block;
+  z-index: -1;
   top: -5.5rem;
   left: 1.5rem;
   width: 10rem;
   height: 2.5rem;
-  border-bottom: 3px solid darkgreen;
+  border-bottom: 4px solid darkgreen;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 .bulb:last-child:after {
   display: none;
+}
+
+.red-glow {
+  box-shadow:   inset 0 0 15px #fff,
+        inset 20px 0 20px red,
+        inset -20px 0 20px #f99,
+        inset 20px 0 40px red,
+        inset -20px 0 40px #f99,
+        0 0 10px #fff,
+        -10px 0 30px red,
+        0 0 50px 20px red,
+        10px 0 30px 10px #f99;
+}
+.blue-glow {
+  box-shadow:   inset 0 0 15px #fff,
+        inset 20px 0 20px blue,
+        inset -20px 0 20px #99f,
+        inset 20px 0 40px blue,
+        inset -20px 0 40px #99f,
+        0 0 10px #fff,
+        -10px 0 30px blue,
+        0 0 50px 20px blue,
+        10px 0 30px 10px #99f;
 }
