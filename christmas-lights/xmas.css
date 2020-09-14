@@ -3,10 +3,11 @@
 body {
   font-family: 'Raleway', sans-serif;
   overflow-x: hidden;
+  background-color: rgba(0, 0, 27, 1);
 }
-.container {
+.container, .controls {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .meta {
     margin-top: 5rem;
@@ -25,6 +26,15 @@ h1 {
   color: darkgreen;
 }
 
+input {
+  width: 2rem;
+  height: 2rem;
+}
+label {
+  color: white;
+  font-size: 2rem;
+}
+
 .bulb {
   background-color: rgba(200, 200, 200, 0.3);
   width: 2.5rem;
@@ -34,7 +44,7 @@ h1 {
   border-bottom-left-radius: 90%;
   border-bottom-right-radius: 90%;
   margin: 2.3rem 4rem;
-  transition-duration: 200ms;
+  transition-duration: 400ms;
 }
 .bulb:before {
   content: " ";
@@ -68,47 +78,24 @@ h1 {
 }
 
 .red-glow {
-  box-shadow:   inset 0 0 15px #fff,
-        inset 20px 0 20px red,
-        inset -20px 0 20px #f99,
-        inset 20px 0 40px red,
-        inset -20px 0 40px #f99,
-        0 0 10px #fff,
-        -10px 0 30px red,
-        0 0 50px 20px red,
-        10px 0 30px 10px #f99;
+  box-shadow:   inset 0 0 15px rgba(255, 255, 255, 1),
+        inset 20px 0 20px rgba(255, 0, 0, 1),
+        inset -20px 0 20px rgba(255, 153, 153, 1),
+        inset 20px 0 40px rgba(255, 0, 0, 1),
+        inset -20px 0 40px rgba(255, 153, 153, 1),
+        0 0 10px rgba(255, 255, 255, 1),
+        -10px 0 30px rgba(255, 0, 0, 1),
+        0 0 50px 20px rgba(255, 0, 0, 1),
+        10px 0 30px 10px rgba(255, 153, 153, 1);
 }
 .blue-glow {
-  box-shadow:   inset 0 0 15px #fff,
-        inset 20px 0 20px blue,
-        inset -20px 0 20px #99f,
-        inset 20px 0 40px blue,
-        inset -20px 0 40px #99f,
-        0 0 10px #fff,
-        -10px 0 30px blue,
-        0 0 50px 20px blue,
-        10px 0 30px 10px #99f;
-}
-
-.on {
-  animation-duration: 3s;
-  animation-name: sitchedon;
-}
-
-@keyframes sitchedon {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  75% {
-    font-size: 300%;
-    margin-left: 25%;
-    width: 150%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
+  box-shadow:   inset 0 0 15px rgba(255, 255, 255, 1),
+        inset 20px 0 20px rgba(0, 0, 255, 1),
+        inset -20px 0 20px rgba(153, 153, 255, 1),
+        inset 20px 0 40px rgba(0, 0, 255, 1),
+        inset -20px 0 40px rgba(153, 153, 255, 1),
+        0 0 10px rgba(255, 255, 255, 1),
+        -10px 0 30px rgba(0, 0, 255, 1),
+        0 0 50px 20px rgba(0, 0, 255, 1),
+        10px 0 30px 10px rgba(153, 153, 255, 1);
 }
