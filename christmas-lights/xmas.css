@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
   background-color: rgba(0, 0, 27, 1);
 }
-.container, .controls {
+.container, .row {
   display: flex;
   justify-content: space-around;
 }
@@ -13,11 +13,16 @@ body {
     margin-top: 5rem;
 }
 .controls {
-  margin: 4rem auto 0 auto;
+  margin: 0 auto 2rem;;
   border: 8px solid #b00;
+  background-color: #b00;
   border-radius: 10px;
-  padding: 3rem;
+  padding: 0 3rem 3rem 3rem;
   max-width: 600px;
+}
+.row {
+  background-color: rgba(0, 0, 27, 1);
+  padding: 1rem;
 }
 h1 {
   font-family: 'Grandstander', cursive;
@@ -25,7 +30,15 @@ h1 {
   font-size: 5rem;
   color: darkgreen;
 }
-
+h2 {
+  font-family: 'Grandstander', cursive;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #b00;
+  color: white;
+  display: block;
+  margin-top: 1rem;
+}
 input {
   width: 2rem;
   height: 2rem;
@@ -75,6 +88,43 @@ label {
 }
 .bulb:last-child:after {
   display: none;
+}
+
+.blinkRed{
+  animation: blinkRed 0.5s infinite;
+}
+.blinkBlue{
+  animation: blinkBlue 0.5s infinite;
+  animation-delay: 250ms;
+}
+
+@keyframes blinkRed {
+    from { background-color: rgba(255, 200, 200, 0.3); }
+    50% { box-shadow:   inset 0 0 15px rgba(255, 255, 255, 1),
+          inset 20px 0 20px rgba(255, 0, 0, 1),
+          inset -20px 0 20px rgba(255, 153, 153, 1),
+          inset 20px 0 40px rgba(255, 0, 0, 1),
+          inset -20px 0 40px rgba(255, 153, 153, 1),
+          0 0 10px rgba(255, 255, 255, 1),
+          -10px 0 30px rgba(255, 0, 0, 1),
+          0 0 50px 20px rgba(255, 0, 0, 1),
+          10px 0 30px 10px rgba(255, 153, 153, 1);
+        }
+    to { background-color: rgba(255, 200, 200, 0.3); }
+}
+@keyframes blinkBlue {
+    from { background-color: rgba(200, 200, 255, 0.3); }
+    50% { box-shadow:   inset 0 0 15px rgba(255, 255, 255, 1),
+          inset 20px 0 20px rgba(0, 0, 255, 1),
+          inset -20px 0 20px rgba(153, 153, 255, 1),
+          inset 20px 0 40px rgba(0, 0, 255, 1),
+          inset -20px 0 40px rgba(153, 153, 255, 1),
+          0 0 10px rgba(255, 255, 255, 1),
+          -10px 0 30px rgba(0, 0, 255, 1),
+          0 0 50px 20px rgba(0, 0, 255, 1),
+          10px 0 30px 10px rgba(153, 153, 255, 1);
+        }
+    to { background-color: rgba(200, 200, 255, 0.3); }
 }
 
 .red-glow {
